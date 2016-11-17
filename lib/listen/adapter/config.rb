@@ -13,7 +13,7 @@ module Listen
         directories = [Dir.pwd] if directories.to_a.empty?
 
         # TODO: fix (flatten, array, compact?)
-        @directories = directories.map do |directory|
+        @directories = directories.flatten.map do |directory|
           Pathname.new(directory.to_s).realpath
         end
 
